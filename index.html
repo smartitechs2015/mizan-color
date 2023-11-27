@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>الرئيسية | نظام إدارة الميزان</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="." name="description" />
+    <meta content="" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png">
+    <link href="assets/libs/toastr/build/toastr.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Bootstrap css -->
+    <link href="assets/css/bootstrap-rtl.min.css" rel="stylesheet" type="text/css" />
+    <!-- App css -->
+    <link href="assets/css/app-rtl.min.css" rel="stylesheet" type="text/css" id="app-style" />
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css" />
+    <!-- icons -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- Head js -->
+    <script src="assets/js/head.js"></script>
+
+</head>
+
+<!-- body start -->
+
+<body data-layout-mode="default" data-theme="light" data-layout-width="fluid" data-topbar-color="dark"
+    data-menu-position="fixed" data-leftbar-color="light" data-leftbar-size='defult' data-sidebar-user='true'>
+
+    <!-- Begin page -->
+    <div id="wrapper">
+        <!-- Topbar Start -->
+        <div class="navbar-custom">
+            <div class="container-fluid">
+                <ul class="list-unstyled topnav-menu float-end mb-0">
+
+                    <li class="d-none d-lg-block">
+                        <form class="app-search">
+                            <div class="app-search-box dropdown">
+                                <div class="input-group">
+                                    <input type="search" class="form-control" placeholder="البحث ..." id="top-search">
+                                    <button class="btn input-group-text" type="submit">
+                                        <i class="fe-search"></i>
+                                    </button>
+                                </div>
+                                <div class="dropdown-menu dropdown-lg" id="search-dropdown">
+                                    <!-- item-->
+                                    <div class="dropdown-header noti-title">
+                                        <h5 class="text-overflow mb-2">يوجد 10 نتائج</h5>
+                                    </div>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <i class="fe-home me-1"></i>
+                                        <span>نتيجة البحث 1</span>
+                                    </a>
+
+
+
+                                    <!-- item-->
+                                    <div class="dropdown-header noti-title">
+                                        <h6 class="text-overflow mb-2 text-uppercase">المستخدمين</h6>
+                                    </div>
+
+                                    <div class="notification-list">
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                            <div class="d-flex align-items-start">
+                                                <img class="d-flex me-2 rounded-circle"
+                                                    src="assets/images/users/user-1.jpg" alt="مسؤول النظام" height="32">
+                                                <div class="w-100">
+                                                    <h5 class="m-0 font-14">مسؤول النظام</h5>
+                                                    <span class="font-12 mb-0">مسؤول النظام</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </li>
+
+                    <li class="dropdown d-inline-block d-lg-none">
+                        <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light"
+                            data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false"
+                            aria-expanded="false">
+                            <i class="fe-search noti-icon"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-lg dropdown-menu-end p-0">
+                            <form class="p-3">
+                                <input type="text" class="form-control" placeholder="البحث .."
+                                    aria-label="البحث في النظام">
+                            </form>
+                        </div>
+                    </li>
+
+                    <li class="dropdown d-none d-lg-inline-block">
+                        <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="fullscreen"
+                            href="#">
+                            <i class="fe-maximize noti-icon"></i>
+                        </a>
+                    </li>
+                    <li class="dropdown notification-list topbar-dropdown">
+                        <a class="nav-link dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown" href="#"
+                            role="button" aria-haspopup="false" aria-expanded="false">
+                            <i class="fe-bell noti-icon"></i>
+                            <span class="badge bg-danger rounded-circle noti-icon-badge">9</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end dropdown-lg">
+
+                            <!-- item-->
+                            <div class="dropdown-item noti-title">
+                                <h5 class="m-0">
+                                    <span class="float-end">
+                                        <a href="" class="text-dark">
+                                            <small>مسح الكل</small>
+                                        </a>
+                                    </span>اشعارات النظام
+                                </h5>
+                            </div>
+
+                            <div class="noti-scroll" data-simplebar>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item active">
+                                    <div class="notify-icon">
+                                        <img src="assets/images/users/user-1.jpg" class="img-fluid rounded-circle"
+                                            alt="" />
+                                    </div>
+                                    <p class="notify-details">عنوان الاشعار</p>
+                                    <p class="text-muted mb-0 user-msg">
+                                        <small>نص الاشعار</small>
+                                    </p>
+                                </a>
+                            </div>
+
+                            <!-- All-->
+                            <a href="javascript:void(0);"
+                                class="dropdown-item text-center text-primary notify-item notify-all">
+                                كل الاشعارات
+                                <i class="fe-arrow-right"></i>
+                            </a>
+
+                        </div>
+                    </li>
+
+                    <li class="dropdown notification-list topbar-dropdown">
+                        <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light"
+                            data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false"
+                            aria-expanded="false">
+                            <img src="assets/images/users/user-1.jpg" alt="user-image" class="rounded-circle">
+                            <span class="pro-user-name ms-1">
+                                مسؤول النظام <i class="mdi mdi-chevron-down"></i>
+                            </span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
+                            <!-- item-->
+                            <div class="dropdown-header noti-title">
+                                <h6 class="text-overflow m-0">مرحباً مسؤول النظام</h6>
+                            </div>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="fe-user"></i>
+                                <span>الحساب</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="fe-settings"></i>
+                                <span>اعدادات الحساب</span>
+                            </a>
+
+                            <div class="dropdown-divider"></div>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="fe-log-out"></i>
+                                <span>تسجيل الخروج</span>
+                            </a>
+
+                        </div>
+                    </li>
+
+                    <li class="dropdown notification-list">
+                        <a href="javascript:void(0);" class="nav-link right-bar-toggle waves-effect waves-light">
+                            <i class="fe-settings noti-icon"></i>
+                        </a>
+                    </li>
+
+                </ul>
+
+                <!-- LOGO -->
+                <div class="logo-box">
+                    <a href="index.html" class="logo logo-dark text-center">
+                        <span class="logo-sm">
+                            <img src="assets/images/logo-sm.png" alt="" height="22">
+                            <!-- <span class="logo-lg-text-light">UBold</span> -->
+                        </span>
+                        <span class="logo-lg">
+                            <img src="assets/images/logo-dark.png" alt="" height="20">
+                            <!-- <span class="logo-lg-text-light">U</span> -->
+                        </span>
+                    </a>
+
+                    <a href="index.html" class="logo logo-light text-center">
+                        <span class="logo-sm">
+                            <img src="assets/images/logo-sm.png" alt="" height="22">
+                        </span>
+                        <span class="logo-lg">
+                            <img src="assets/images/logo-light.png" alt="" height="40">
+                        </span>
+                    </a>
+                </div>
+
+                <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
+                    <li>
+                        <button class="button-menu-mobile waves-effect waves-light">
+                            <i class="fe-menu"></i>
+                        </button>
+                    </li>
+
+                    <li>
+                        <!-- Mobile menu toggle (Horizontal Layout)-->
+                        <a class="navbar-toggle nav-link" data-bs-toggle="collapse"
+                            data-bs-target="#topnav-menu-content">
+                            <div class="lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </a>
+                        <!-- End mobile menu toggle-->
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- end Topbar -->
+
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left-side-menu">
+
+            <div class="h-100" data-simplebar>
+
+                <!-- User box -->
+                <div class="user-box text-center">
+                    <img src="assets/images/users/user-1.jpg" alt="user-img" title="Mat Helme"
+                        class="rounded-circle avatar-md">
+                    <div class="dropdown">
+                        <a href="javascript: void(0);" class="text-dark dropdown-toggle h5 mt-2 mb-1 d-block"
+                            data-bs-toggle="dropdown">مسؤول النظام</a>
+                        <div class="dropdown-menu user-pro-dropdown">
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="fe-user me-1"></i>
+                                <span>الحساب</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="fe-settings me-1"></i>
+                                <span>اعدادات الحساب</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="fe-log-out me-1"></i>
+                                <span>تسجيل الخروج</span>
+                            </a>
+
+                        </div>
+                    </div>
+                    <p class="text-muted">مسؤول النظام</p>
+                </div>
+
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+
+                    <ul id="side-menu">
+
+                        <li class="menu-title">لوحة التحكم</li>
+
+                        <li>
+                            <a href="index.html" data-bs-toggle="collapse">
+                                <i data-feather="airplay"></i>
+                                <span class="badge bg-success rounded-pill float-end">1</span>
+                                <span> الرئيسية </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="weights.html">
+                                <i class="fas fa-weight"></i>
+                                <span> الاوزان </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="drivers.html">
+                                <i class="fas fa-user-tie"></i>
+                                <span> السائقين </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="trucks.html">
+                                <i class="fas fa-truck-moving"></i>
+                                <span> المركبات </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="truck-load.html">
+                                <i class="fas fa-truck-loading"></i>
+                                <span> مواد التحميل </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="users.html">
+                                <i class="fas fa-users"></i>
+                                <span> المستخدمين </span>
+                            </a>
+                        </li>
+                </div>
+                </li>
+                </ul>
+
+            </div>
+            <!-- End Sidebar -->
+
+            <div class="clearfix"></div>
+
+        </div>
+        <!-- Sidebar -left -->
+
+    </div>
+    <!-- Left Sidebar End -->
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page">
+        <div class="content">
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li class="breadcrumb-item active">الرئيسية</li>
+                                </ol>
+                            </div>
+                            <h4 class="page-title">لوحة التحكم</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- end page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="text-uppercase font-weight-bolder bg-light p-2 mt-0 mb-3"> button color </h5>
+                                <div class="button-list">
+                                    <button type="button"
+                                        class="btn btn-primary waves-effect waves-light">Primary</button>
+                                    <button type="button"
+                                        class="btn btn-success waves-effect waves-light">Success</button>
+                                    <button type="button" class="btn btn-info waves-effect waves-light">Info</button>
+                                    <button type="button"
+                                        class="btn btn-warning waves-effect waves-light">Warning</button>
+                                    <button type="button"
+                                        class="btn btn-danger waves-effect waves-light">Danger</button>
+                                    <button type="button" class="btn btn-dark waves-effect waves-light">Dark</button>
+                                    <button type="button" class="btn btn-blue waves-effect waves-light">Blue</button>
+                                    <button type="button" class="btn btn-pink waves-effect waves-light">Pink</button>
+                                    <button type="button" class="btn btn-secondary waves-effect">Secondary</button>
+                                    <button type="button" class="btn btn-light waves-effect">Light</button>
+                                    <button type="button" class="btn btn-white waves-effect">White</button>
+                                    <button type="button" class="btn btn-link waves-effect">Link</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="text-uppercase font-weight-bolder bg-light p-2 mt-0"> example </h5>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h4 class="header-title">جدول</h4>
+                                                <p class="sub-header">
+                                                    عنوان فرعي
+                                                </p>
+
+                                                <div class="table-responsive">
+                                                    <table class="table mb-0">
+                                                        <thead class="table-light">
+                                                            <tr>
+                                                                <th>#</th>
+                                                                <th>الاسم</th>
+                                                                <th>الاسم الاخير</th>
+                                                                <th>اسم المستخدم</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row">1</th>
+                                                                <td>عنوان</td>
+                                                                <td>عنوان</td>
+                                                                <td>عنوان</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">1</th>
+                                                                <td>عنوان</td>
+                                                                <td>عنوان</td>
+                                                                <td>عنوان</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">1</th>
+                                                                <td>عنوان</td>
+                                                                <td>عنوان</td>
+                                                                <td>عنوان</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div> <!-- end table-responsive-->
+                                            </div>
+                                        </div> <!-- end card -->
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h4 class="header-title">toaster</h4>
+                                        <p class="sub-header">
+                                            عنوان فرعي
+                                        </p>
+                                        <button onclick="info()" class="btn btn-success waves-effect waves-light">toaster</button>
+                                        <button class="toast-ex btn btn-success waves-effect waves-light">toaster</button>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h4 class="header-title">card</h4>
+                                        <p class="sub-header">
+                                            عنوان فرعي
+                                        </p>
+                                        <div class="widget-rounded-circle card">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <div
+                                                            class="avatar-lg rounded-circle bg-soft-primary border-primary border">
+                                                            <i class="fe-heart font-22 avatar-title text-primary"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="text-end">
+                                                            <h3 class="text-dark mt-1">$<span
+                                                                    data-plugin="counterup">58,947</span></h3>
+                                                            <p class="text-muted mb-1 text-truncate">card</p>
+                                                        </div>
+                                                    </div>
+                                                </div> <!-- end row-->
+                                            </div>
+                                        </div> <!-- end widget-rounded-circle-->
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    مودل تجريبي
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal modal-xl fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content bg-dark">
+                                <div class="modal-header bg-soft-dark border-bottom border-white">
+                                    <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">عنوان المودل</h1>
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-sm table-danger table-bordered text-white text-center mb-0">
+                                            <thead class="">
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>الاسم</th>
+                                                    <th>الاسم الاخير</th>
+                                                    <th>اسم المستخدم</th>
+                                                    <th>عنوان</th>
+                                                    <th>عنوان</th>
+                                                    <th>عنوان</th>
+                                                    <th>عنوان</th>
+                                                    <th>عنوان</th>
+                                                    <th>عنوان</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="table-group-divider">
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>عنوان</td>
+                                                    <td>عنوان</td>
+                                                    <td>عنوان</td>
+                                                    <td>عنوان</td>
+                                                    <td>عنوان</td>
+                                                    <td>عنوان</td>
+                                                    <td>عنوان</td>
+                                                    <td>عنوان</td>
+                                                    <td>عنوان</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>عنوان</td>
+                                                    <td>عنوان</td>
+                                                    <td>عنوان</td>
+                                                    <td>عنوان</td>
+                                                    <td>عنوان</td>
+                                                    <td>عنوان</td>
+                                                    <td>عنوان</td>
+                                                    <td>عنوان</td>
+                                                    <td>عنوان</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>عنوان</td>
+                                                    <td>عنوان</td>
+                                                    <td>عنوان</td>
+                                                    <td>عنوان</td>
+                                                    <td>عنوان</td>
+                                                    <td>عنوان</td>
+                                                    <td>عنوان</td>
+                                                    <td>عنوان</td>
+                                                    <td>عنوان</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>عنوان</td>
+                                                    <td>عنوان</td>
+                                                    <td>عنوان</td>
+                                                    <td>عنوان</td>
+                                                    <td>عنوان</td>
+                                                    <td>عنوان</td>
+                                                    <td>عنوان</td>
+                                                    <td>عنوان</td>
+                                                    <td>عنوان</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div> <!-- end table-responsive-->
+                                </div>
+                                <div class="modal-footer bg-soft-dark border-top border-white">
+                                    <button type="button" class="btn btn-soft-secondary" data-bs-dismiss="modal">الغاء</button>
+                                    <button type="button" class="btn btn-secondary">حفظ</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+            </div> <!-- container -->
+
+        </div> <!-- content -->
+
+        <!-- Footer Start -->
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        <script>document.write(new Date().getFullYear())</script> &copy; نظام ادارة الميزان
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end Footer -->
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+
+    </div>
+    <!-- END wrapper -->
+
+    <!-- Vendor js -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <script src="assets/libs/toastr/build/toastr.min.js"></script>
+
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+    <script type="text/javascript">
+        toastr.options.closeHtml = '<button><i class="icon-off"></i></button>';
+
+
+        function info(){
+            
+
+            toastr.info('message text text')
+
+        }
+        
+    </script>
+
+   <script type="text/javascript">
+        $(document).ready(function () {
+            toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-top-full-width",
+                "preventDuplicates": false,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+        });
+        $(".toast-ex").click(function () {
+            toastr.info('تم الاضافة بنجاح.', 'تمت الاضافة بنجاح', { timeOut: 5000 })
+        });
+    </script> 
+</body>
+
+</html>

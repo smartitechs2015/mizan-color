@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>الاوزان | نظام إدارة الميزان</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png">
+
+    <!-- Sweet Alert-->
+    <link href="assets/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Plugins css -->
+    <link href="assets/libs/mohithg-switchery/switchery.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/multiselect/css/multi-select.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/selectize/css/selectize.bootstrap3.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/toastr/build/toastr.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/spectrum-colorpicker2/spectrum.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Bootstrap css -->
+    <link href="assets/css/bootstrap-rtl.min.css" rel="stylesheet" type="text/css" />
+    <!-- App css -->
+    <link href="assets/css/app-rtl.min.css" rel="stylesheet" type="text/css" id="app-style" />
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css" />
+    <!-- icons -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- Head js -->
+    <script src="assets/js/head.js"></script>
+
+</head>
+
+<!-- body start -->
+
+<body data-layout-mode="default" data-theme="light" data-layout-width="fluid" data-topbar-color="dark"
+    data-menu-position="fixed" data-leftbar-color="light" data-leftbar-size='defult' data-sidebar-user='true'>
+
+    <!-- Begin page -->
+    <div id="wrapper">
+        <!-- Topbar Start -->
+        <div class="navbar-custom">
+            <div class="container-fluid">
+                <ul class="list-unstyled topnav-menu float-end mb-0">
+
+                    <li class="d-none d-lg-block">
+                        <form class="app-search">
+                            <div class="app-search-box dropdown">
+                                <div class="input-group">
+                                    <input type="search" class="form-control" placeholder="البحث ..." id="top-search">
+                                    <button class="btn input-group-text" type="submit">
+                                        <i class="fe-search"></i>
+                                    </button>
+                                </div>
+                                <div class="dropdown-menu dropdown-lg" id="search-dropdown">
+                                    <!-- item-->
+                                    <div class="dropdown-header noti-title">
+                                        <h5 class="text-overflow mb-2">يوجد 10 نتائج</h5>
+                                    </div>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <i class="fe-home me-1"></i>
+                                        <span>نتيجة البحث 1</span>
+                                    </a>
+
+
+
+                                    <!-- item-->
+                                    <div class="dropdown-header noti-title">
+                                        <h6 class="text-overflow mb-2 text-uppercase">المستخدمين</h6>
+                                    </div>
+
+                                    <div class="notification-list">
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                            <div class="d-flex align-items-start">
+                                                <img class="d-flex me-2 rounded-circle"
+                                                    src="assets/images/users/user-1.jpg" alt="مسؤول النظام" height="32">
+                                                <div class="w-100">
+                                                    <h5 class="m-0 font-14">مسؤول النظام</h5>
+                                                    <span class="font-12 mb-0">مسؤول النظام</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </li>
+
+                    <li class="dropdown d-inline-block d-lg-none">
+                        <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light"
+                            data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false"
+                            aria-expanded="false">
+                            <i class="fe-search noti-icon"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-lg dropdown-menu-end p-0">
+                            <form class="p-3">
+                                <input type="text" class="form-control" placeholder="البحث .."
+                                    aria-label="البحث في النظام">
+                            </form>
+                        </div>
+                    </li>
+
+                    <li class="dropdown d-none d-lg-inline-block">
+                        <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="fullscreen"
+                            href="#">
+                            <i class="fe-maximize noti-icon"></i>
+                        </a>
+                    </li>
+                    <li class="dropdown notification-list topbar-dropdown">
+                        <a class="nav-link dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown" href="#"
+                            role="button" aria-haspopup="false" aria-expanded="false">
+                            <i class="fe-bell noti-icon"></i>
+                            <span class="badge bg-danger rounded-circle noti-icon-badge">9</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end dropdown-lg">
+
+                            <!-- item-->
+                            <div class="dropdown-item noti-title">
+                                <h5 class="m-0">
+                                    <span class="float-end">
+                                        <a href="" class="text-dark">
+                                            <small>مسح الكل</small>
+                                        </a>
+                                    </span>اشعارات النظام
+                                </h5>
+                            </div>
+
+                            <div class="noti-scroll" data-simplebar>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item active">
+                                    <div class="notify-icon">
+                                        <img src="assets/images/users/user-1.jpg" class="img-fluid rounded-circle"
+                                            alt="" />
+                                    </div>
+                                    <p class="notify-details">عنوان الاشعار</p>
+                                    <p class="text-muted mb-0 user-msg">
+                                        <small>نص الاشعار</small>
+                                    </p>
+                                </a>
+                            </div>
+
+                            <!-- All-->
+                            <a href="javascript:void(0);"
+                                class="dropdown-item text-center text-primary notify-item notify-all">
+                                كل الاشعارات
+                                <i class="fe-arrow-right"></i>
+                            </a>
+
+                        </div>
+                    </li>
+
+                    <li class="dropdown notification-list topbar-dropdown">
+                        <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light"
+                            data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false"
+                            aria-expanded="false">
+                            <img src="assets/images/users/user-1.jpg" alt="user-image" class="rounded-circle">
+                            <span class="pro-user-name ms-1">
+                                مسؤول النظام <i class="mdi mdi-chevron-down"></i>
+                            </span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
+                            <!-- item-->
+                            <div class="dropdown-header noti-title">
+                                <h6 class="text-overflow m-0">مرحباً مسؤول النظام</h6>
+                            </div>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="fe-user"></i>
+                                <span>الحساب</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="fe-settings"></i>
+                                <span>اعدادات الحساب</span>
+                            </a>
+
+                            <div class="dropdown-divider"></div>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="fe-log-out"></i>
+                                <span>تسجيل الخروج</span>
+                            </a>
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <a class="nav-link waves-effect waves-light" data-bs-toggle="offcanvas"
+                            href="#theme-settings-offcanvas">
+                            <i class="fe-settings font-22"></i>
+                        </a>
+                    </li>
+
+                </ul>
+
+                <!-- LOGO -->
+                <div class="logo-box">
+                    <a href="index.html" class="logo logo-dark text-center">
+                        <span class="logo-sm">
+                            <img src="assets/images/logo-sm.png" alt="" height="22">
+                            <!-- <span class="logo-lg-text-light">UBold</span> -->
+                        </span>
+                        <span class="logo-lg">
+                            <img src="assets/images/logo-dark.png" alt="" height="20">
+                            <!-- <span class="logo-lg-text-light">U</span> -->
+                        </span>
+                    </a>
+
+                    <a href="index.html" class="logo logo-light text-center">
+                        <span class="logo-sm">
+                            <img src="assets/images/logo-sm.png" alt="" height="22">
+                        </span>
+                        <span class="logo-lg">
+                            <img src="assets/images/logo-light.png" alt="" height="40">
+                        </span>
+                    </a>
+                </div>
+
+                <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
+                    <li>
+                        <button class="button-menu-mobile waves-effect waves-light">
+                            <i class="fe-menu"></i>
+                        </button>
+                    </li>
+
+                    <li>
+                        <!-- Mobile menu toggle (Horizontal Layout)-->
+                        <a class="navbar-toggle nav-link" data-bs-toggle="collapse"
+                            data-bs-target="#topnav-menu-content">
+                            <div class="lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </a>
+                        <!-- End mobile menu toggle-->
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- end Topbar -->
+
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left-side-menu">
+
+            <div class="h-100" data-simplebar>
+
+                <!-- User box -->
+                <div class="user-box text-center">
+                    <img src="assets/images/users/user-1.jpg" alt="user-img" title="Mat Helme"
+                        class="rounded-circle avatar-md">
+                    <div class="dropdown">
+                        <a href="javascript: void(0);" class="text-dark dropdown-toggle h5 mt-2 mb-1 d-block"
+                            data-bs-toggle="dropdown">مسؤول النظام</a>
+                        <div class="dropdown-menu user-pro-dropdown">
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="fe-user me-1"></i>
+                                <span>الحساب</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="fe-settings me-1"></i>
+                                <span>اعدادات الحساب</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="fe-log-out me-1"></i>
+                                <span>تسجيل الخروج</span>
+                            </a>
+
+                        </div>
+                    </div>
+                    <p class="text-muted">مسؤول النظام</p>
+                </div>
+
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+
+                    <ul id="side-menu">
+
+                        <li class="menu-title">لوحة التحكم</li>
+
+                        <li>
+                            <a href="index.html" data-bs-toggle="collapse">
+                                <i data-feather="airplay"></i>
+                                <span class="badge bg-success rounded-pill float-end">1</span>
+                                <span> الرئيسية </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="weights.html">
+                                <i class="fas fa-weight"></i>
+                                <span> الاوزان </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="drivers.html">
+                                <i class="fas fa-user-tie"></i>
+                                <span> السائقين </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="trucks.html">
+                                <i class="fas fa-truck-moving"></i>
+                                <span> المركبات </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="truck-load.html">
+                                <i class="fas fa-truck-loading"></i>
+                                <span> مواد التحميل </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="users.html">
+                                <i class="fas fa-users"></i>
+                                <span> المستخدمين </span>
+                            </a>
+                        </li>
+                </div>
+                </li>
+                </ul>
+
+            </div>
+            <!-- End Sidebar -->
+
+            <div class="clearfix"></div>
+
+        </div>
+        <!-- Sidebar -left -->
+
+    </div>
+    <!-- Left Sidebar End -->
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page">
+        <div class="content">
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
+                                    <li class="breadcrumb-item active">الاوزان</li>
+                                </ol>
+                            </div>
+                            <h4 class="page-title">الاوزان</h4>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- end page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="weight-color">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-lg-6 d-flex justify-content-start">
+                                            <div id="weight">
+                                                <div dir="ltr" class="weight-wrapper text-center">
+                                                    <div id="weight-cal"> 1111 KG</div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-lg-6 d-flex justify-content-end">
+                                            <!-- Digital Clock HTML -->
+                                            <div id="clockdate">
+                                                <div dir="rtl" class="clockdate-wrapper text-center">
+                                                    <div id="clock"></div>
+                                                    <div id="date"></div>
+                                                </div>
+                                            </div>
+                                            <!-- End Digital Clock HTML -->
+                                        </div>
+
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="weight-cal">
+
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="text-uppercase font-weight-bolder bg-light p-2 mt-0 mb-3">أضافة وزن</h5>
+                                <div class="row">
+                                    <div class="col-lg-5">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label">بحث عن رقم البطاقة</label> <br />
+                                                    <div class="input-group">
+                                                        <input type="search" class="form-control"
+                                                            placeholder="اكتب هنا للبحث" id="card-search">
+                                                        <button
+                                                            class="btn btn-blue waves-effect waves-light input-group-text"
+                                                            type="submit">
+                                                            <i class="fe-search"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label">غير مكتملة</label> <br />
+                                                    <select id="selectize-select">
+                                                        <option data-display="Select">اكتب هنا للبحث</option>
+                                                        <option value="1">بحث 1</option>
+                                                        <option value="2">بحث 2</option>
+                                                        <option value="3" disabled>بحث 3</option>
+                                                        <option value="4">بحث 4</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h5 class="bg-light mt-0 mb-4">بيانات بطاقة الوزن</h5>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="mb-3">
+                                                    <div>
+                                                        <label for="select-car-number" class="form-label">رقم
+                                                            السيارة</label>
+                                                        <select id="select-car-number" class="select-car-number"
+                                                            placeholder="رقم السيارة ..">
+                                                            <option value="1">111</option>
+                                                            <option value="2">22</option>
+                                                            <option value="3">33</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="mb-3">
+                                                    <div>
+                                                        <label for="select-driver-name" class="form-label">اسم
+                                                            السائق</label>
+                                                        <select id="select-driver-name" class="select-driver-name"
+                                                            placeholder="اسم السائق ..">
+                                                            <option value="1">111</option>
+                                                            <option value="2">22</option>
+                                                            <option value="3">33</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="mb-3">
+                                                    <div>
+                                                        <label for="select-package" class="form-label">مادة
+                                                            التحميل</label>
+                                                        <select id="select-package" class="select-package"
+                                                            placeholder="مادة التحميل...">
+
+                                                            <option value="1">111</option>
+                                                            <option value="2">22</option>
+                                                            <option value="3">33</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="mb-3">
+                                                    <div>
+                                                        <label for="select-client-name" class="form-label">اسم
+                                                            العميل</label>
+                                                        <select id="select-client-name" class="select-client-name"
+                                                            placeholder="اسم العميل...">
+                                                            <option value="1">111</option>
+                                                            <option value="2">22</option>
+                                                            <option value="3">33</option>
+
+                                                        </select>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="mb-3">
+                                                    <div>
+                                                        <label for="select-warehouse" class="form-label">مستودع
+                                                            التحميل</label>
+                                                        <select id="select-warehouse" class="select-warehouse"
+                                                            placeholder="مستودع التحميل...">
+
+                                                            <option value="1">111</option>
+                                                            <option value="2">22</option>
+                                                            <option value="3">33</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="mb-3">
+                                                    <label for="num" class="form-label">العدد</label>
+                                                    <input type="number" id="num" class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-6">
+                                                <div class="mb-3">
+                                                    <label for="price" class="form-label">سعر المادة</label>
+                                                    <input type="number" id="price" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="mb-3">
+                                                    <label for="simpleinput" class="form-label">ملاحظات</label>
+                                                    <input type="text" id="simpleinput" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="mt-3 mb-3">
+                                                    <div class="check-state">
+                                                        <input type="checkbox" class="js-switch js-check-change"
+                                                            checked />
+                                                        <div class="check-change js-check-change-field">&laquo; فارغ
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="row btn-group">
+                                                    <div class="col-sm-4">
+                                                        <div class="dropdown">
+                                                            <button
+                                                                class="btn btn-danger waves-effect waves-light dropdown-toggle"
+                                                                type="button" data-bs-toggle="dropdown"
+                                                                aria-haspopup="true" aria-expanded="false">
+                                                                <span class="btn-label"><i
+                                                                        class="fas fa-plus-circle"></i></span>
+                                                                جديد <i class="mdi mdi-chevron-down"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu">
+                                                                <a class="dropdown-item" href="#">من لوحة المفاتيح</a>
+                                                                <a class="dropdown-item" href="#">من الماسح</a>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <button
+                                                            class="btn btn-blue waves-effect waves-light first"><span
+                                                                class="btn-label"><i class="far fa-save"></i></span> حفظ
+                                                        </button>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="dropdown">
+
+                                                            <button type="button"
+                                                                class="btn btn-secondary waves-effect waves-light dropdown-toggle"
+                                                                data-bs-toggle="dropdown" aria-expanded="false"
+                                                                id="dropdownMenuButton"><span class="btn-label"><i
+                                                                        class=" fas fa-print"></i></span>
+                                                                طباعة <i class="mdi mdi-chevron-down"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu dropdown-menu-end">
+                                                                <a class="dropdown-item" href="#">خيار 1</a>
+                                                                <a class="dropdown-item" href="#">خيار 1</a>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 bg-dark text-center mt-3 mb-3">
+                                                <div class="btn-group">
+                                                    <button type="button"
+                                                        class="btn btn-lg btn-dark waves-effect waves-light"><i
+                                                            class="far fa-stop-circle"></i></button>
+                                                    <button type="button"
+                                                        class="btn btn-lg btn-dark waves-effect waves-light"><i
+                                                            class="fas fa-angle-double-right"></i></button>
+                                                    <button type="button"
+                                                        class="btn btn-lg btn-dark waves-effect waves-light"><i
+                                                            class="far fa-arrow-alt-circle-right"></i></button>
+                                                    <button type="button"
+                                                        class="btn btn-lg btn-dark waves-effect waves-light"><i
+                                                            class="far fa-arrow-alt-circle-left"></i></button>
+                                                    <button type="button"
+                                                        class="btn btn-lg btn-dark waves-effect waves-light"><i
+                                                            class="fas fa-angle-double-left"></i></button>
+                                                    <button type="button"
+                                                        class="btn btn-lg btn-dark waves-effect waves-light"><i
+                                                            class="far fa-arrow-alt-circle-up"></i></button>
+                                                    <button type="button"
+                                                        class="btn btn-lg btn-dark waves-effect waves-light"><i
+                                                            class="far fa-check-circle"></i></button>
+                                                    <button type="button"
+                                                        class="btn btn-lg btn-dark waves-effect waves-light"><i
+                                                            class="mdi mdi-close"></i></button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="mb-3">
+                                                    <label class="form-label">الوزن الفارغ</label>
+                                                    <input type="text" class="form-control" placeholder="الوزن الفارغ">
+                                                </div>
+
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="mb-3">
+                                                    <label class="form-label">الوقت والتاريخ</label>
+                                                    <input type="text" id="datetime-datepicker" class="form-control"
+                                                        placeholder="الوقت والتاريخ">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="mb-3">
+                                                    <label class="form-label">الوزن القائم</label>
+                                                    <input type="text" class="form-control" placeholder="الوزن القائم">
+                                                </div>
+
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="mb-3">
+                                                    <label class="form-label">الوقت والتاريخ</label>
+                                                    <input type="text" id="datetime-full" class="form-control"
+                                                        placeholder="الوقت والتاريخ">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="mb-3">
+                                                    <label class="form-label">الوزن الصافي</label>
+                                                    <input type="text" class="form-control" placeholder="الوزن الصافي">
+                                                </div>
+
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="mb-3">
+                                                    <label class="form-label">السعر الاجمالي</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="السعر الاجمالي">
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- container -->
+
+    </div> <!-- content -->
+
+    <!-- Footer Start -->
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <script>document.write(new Date().getFullYear())</script> &copy; نظام ادارة الميزان
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- end Footer -->
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+
+    </div>
+    <!-- END wrapper -->
+    <!-- Theme Settings -->
+    
+    <div class="offcanvas offcanvas-end right-bar" id="theme-settings-offcanvas">
+        <div class="offcanvas-body p-3 h-100" data-simplebar>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label">تغيير خلفية الوزن</label>
+                            <div class="input-group">
+                                <input type="color" id="weight-bg-color" class="form-control" value="#000000">
+                                <button type="button" onclick="changeWeightColor('#weight-bg-color')"
+                                    class="btn waves-effect waves-light btn-secondary">تطبيق</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label">تغيير لون خط الوزن</label>
+                            <div class="input-group">
+                                <input type="color" id="weight-quntity-color" class="form-control" value="#ffffff">
+                                <button type="button" onclick="changeWeightQuntityColor('#weight-quntity-color')"
+                                    class="btn waves-effect waves-light btn-secondary">تطبيق</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label">تغيير خلفية حساب الوزن</label>
+                            <div class="input-group">
+                                <input type="color" id="weight-cal-card" class="form-control" value="#ffffff">
+                                <button type="button" onclick="changeWeightCalCardColor('#weight-cal-card')"
+                                    class="btn waves-effect waves-light btn-secondary">تطبيق</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label">تغيير لون خط الوزن</label>
+                            <div class="input-group">
+                                <input type="color" id="weight-font-color" class="form-control" value="#000000">
+                                <button type="button" onclick="changeWeightFontColor('#weight-font-color')"
+                                    class="btn waves-effect waves-light btn-secondary">تطبيق</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="mb-3">
+                            <label class="form-label">تغيير حجم الخط</label>
+                            <div class="input-group">
+                                <input type="number" id="font-size" class="form-control">
+                                <button type="button" onclick="changeFontSize('#font-size')"
+                                    class="btn waves-effect waves-light btn-secondary">تطبيق</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="mb-3">
+                            <label class="form-label">تغيير خلفية القائمة</label>
+                            <div class="input-group">
+                                <input type="color" id="menu-color" class="form-control" value="#ffffff">
+                                <button type="button" onclick="changeMenuColor('#menu-color')"
+                                    class="btn waves-effect waves-light btn-secondary">تطبيق</button>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label class="form-label">تغيير لون خط القائمة</label>
+                                <div class="input-group">
+                                    <input type="color" id="menu-item-color" class="form-control" value="#00acc1">
+                                    <button type="button" onclick="changeMenuFontsColor('#menu-item-color')"
+                                        class="btn waves-effect waves-light btn-secondary">تطبيق</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <div class="d-flex gap-2">
+                                    <button type="button" onclick="saveSettings()" class="btn btn-secondary w-50" id="save-layout">حفظ</button>
+                                    <button type="reset" onclick="resetSettings()" class="btn btn-light w-50" id="reset-layout">حذف</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+    </div>
+
+
+    <!-- Vendor js -->
+    <script src="assets/js/vendor.min.js"></script>
+    <!-- Sweet Alerts js -->
+    <script src="assets/libs/sweetalert2/sweetalert2.all.min.js"></script>
+    <!-- Sweet alert init js-->
+    <script src="assets/js/pages/sweet-alerts.init.js"></script>
+    <script src="assets/libs/selectize/js/standalone/selectize.min.js"></script>
+    <script src="assets/libs/mohithg-switchery/switchery.min.js"></script>
+    <script src="assets/libs/multiselect/js/jquery.multi-select.js"></script>
+    <script src="assets/libs/select2/js/select2.min.js"></script>
+    <script src="assets/libs/jquery-mockjax/jquery.mockjax.min.js"></script>
+    <script src="assets/libs/devbridge-autocomplete/jquery.autocomplete.min.js"></script>
+    <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+    <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+    <script src="assets/libs/toastr/build/toastr.min.js"></script>
+    <script src="assets/libs/spectrum-colorpicker2/spectrum.min.js"></script>
+
+
+    <!-- Init js-->
+    <script src="assets/js/pages/form-advanced.init.js"></script>
+    <script src="assets/js/pages/form-pickers.init.js"></script>
+    <script src="assets/js/pages/toastr.init.js"></script>
+
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+    <script>
+        document.querySelector(".first").addEventListener('click', function () {
+            Swal.fire({
+                title: "تم الحفظ",
+                text: "تم الحفظ بنجاح",
+                icon: "success",
+            });
+        });
+    </script>
+    <script>
+        
+        // Your functions go here
+        function changeWeightColor() {
+            var backgroundColor = $('#weight-bg-color').val();
+            $('.weight-color .card').css('background-color', backgroundColor);
+        }
+
+        function changeWeightQuntityColor() {
+    var backgroundColor = $('#weight-quntity-color').val();
+    
+    // Set the text color and text shadow
+    $('#weight, #clock, #date').css({
+        'color': backgroundColor,
+        'text-shadow': '2px 2px 2px rgba(0, 0, 0, 0.5)' // Adjust the shadow values as needed
+    });
+    var ap = (hr < 12) ? "<span>ص</span>" : "<span>م</span>";
+    $('span').html(ap).css('color', backgroundColor);
+}
+
+        function changeWeightCalCardColor() {
+            var backgroundColor = $('#weight-cal-card').val();
+            $('.weight-cal .card').css('background-color', backgroundColor);
+            changeBgLight();
+            
+            function changeBgLight() {
+                $(".bg-light").css('--ct-light-rgb', backgroundColor);
+            }
+        }
+
+        function changeFontSize(fontSizeInput) {
+            var fontSize = $(fontSizeInput).val();
+            $('.h1, h2, h3, h4, h5, h6, p, .form-label').css('font-size', fontSize + 'px');
+        }
+
+        function changeWeightFontColor() {
+            var fontColor = $('#weight-font-color').val();
+            $('.weight-cal .card, .weight-cal .card .h1, .weight-cal .card h2, .weight-cal .card h3, .weight-cal .card h4, .weight-cal .card h5, .weight-cal .card h6, .weight-cal .card p, .weight-cal .card .form-label').css('color', fontColor);
+        }
+   
+        function changeMenuColor() {
+            var backgroundColor = $('#menu-color').val();
+            $('.left-side-menu').css('--ct-bg-leftbar', backgroundColor);
+        }
+
+        function changeMenuFontsColor() {
+    var backgroundColor = $('#menu-item-color').val();
+    
+    // Set the color and text shadow for menu items
+    $('#sidebar-menu>ul>li>a, #sidebar-menu .menuitem-active .active').css({
+        '--ct-menu-item': backgroundColor,
+        '--ct-menu-item-hover': '#ffffff',
+        '--ct-menu-item-active': '#ffffff',
+        'text-shadow': '2px 2px 2px rgba(0, 0, 0, 0.5)' // Adjust the shadow values as needed
+    });
+}
+    </script>
+    
+    <script>
+
+        // Load settings from localStorage and apply them on page load
+        $(document).ready(function() {
+            applySavedColorSetting('#weight-bg-color', '.weight-color .card', 'background-color');
+            applySavedColorSetting('#weight-quntity-color', '#weight, #clock, #date', 'color');
+            applySavedColorSetting('#weight-cal-card', '.weight-cal .card', 'background-color');
+            applySavedFontSizeSetting('#font-size', '.h1, h2, h3, h4, h5, h6, p, .form-label');
+            applySavedColorSetting('#weight-font-color', '.weight-cal .card, .weight-cal .card .h1, .weight-cal .card h2, .weight-cal .card h3, .weight-cal .card h4, .weight-cal .card h5, .weight-cal .card h6, .weight-cal .card p, .weight-cal .card .form-label', 'color');
+            applySavedColorSetting('#menu-color', '.left-side-menu', '--ct-bg-leftbar');
+            applySavedColorSetting('#menu-item-color', '#sidebar-menu>ul>li>a, #sidebar-menu .menuitem-active .active', '--ct-menu-item');
+        });
+        
+        function saveSettings() {
+            saveColorSetting('#weight-bg-color', '.weight-color .card', 'background-color');
+            saveColorSetting('#weight-quntity-color', '#weight, #clock, #date', 'color');
+            saveColorSetting('#weight-cal-card', '.weight-cal .card', 'background-color');
+            saveFontSizeSetting('#font-size', '.h1, h2, h3, h4, h5, h6, p, .form-label');
+            saveColorSetting('#weight-font-color', '.weight-cal .card, .weight-cal .card .h1, .weight-cal .card h2, .weight-cal .card h3, .weight-cal .card h4, .weight-cal .card h5, .weight-cal .card h6, .weight-cal .card p, .weight-cal .card .form-label', 'color');
+            saveColorSetting('#menu-color', '.left-side-menu', '--ct-bg-leftbar');
+            saveColorSetting('#menu-item-color', '#sidebar-menu>ul>li>a, #sidebar-menu .menuitem-active .active', '--ct-menu-item');
+            alert('Settings saved successfully!');
+            location.reload();
+        }
+        
+        function resetSettings() {
+            localStorage.clear();
+            alert('Settings reset successfully!');
+            location.reload(); // Reload the page after resetting settings
+        }
+        
+        function saveColorSetting(inputId, targetSelector, cssProperty) {
+            var color = $(inputId).val();
+            $(targetSelector).css(cssProperty, color);
+            localStorage.setItem(inputId, color);
+        }
+        
+        function applySavedColorSetting(inputId, targetSelector, cssProperty) {
+            var savedColor = localStorage.getItem(inputId);
+            if (savedColor) {
+                $(inputId).val(savedColor);
+                $(targetSelector).css(cssProperty, savedColor);
+            }
+        }
+        
+        function saveFontSizeSetting(inputId, targetSelector) {
+            var fontSize = $(inputId).val();
+            $(targetSelector).css('font-size', fontSize + 'px');
+            localStorage.setItem(inputId, fontSize);
+        }
+        
+        function applySavedFontSizeSetting(inputId, targetSelector) {
+            var savedFontSize = localStorage.getItem(inputId);
+            if (savedFontSize) {
+                $(inputId).val(savedFontSize);
+                $(targetSelector).css('font-size', savedFontSize + 'px');
+            }
+        }
+        
+        </script>
+</body>
+
+</html>

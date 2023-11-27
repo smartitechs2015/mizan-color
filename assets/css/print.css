@@ -1,0 +1,8 @@
+@media print {
+
+
+    
+    .fixed-table-toolbar{
+        display: none;
+    }
+}
